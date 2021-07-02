@@ -19,4 +19,4 @@ jobs:
         docker exec -t build pacman -Syy --noconfirm
         docker exec -t build pacman -Su --noconfirm
         docker exec -t build cat /etc/pacman.conf
-        docker exec -t build pacman -S --needed --noconfirm base base-devel archiso gtk3 python-babel python-gobject python-psutil python-pylint python-pythondialog python-setuptools
+        docker exec -t build pacman -S --needed --noconfirm base base-devel archiso gtk3 python-babel python-gobject python-psutil python-pylint python-pythondialog python-setuptools libxmu
