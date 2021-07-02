@@ -16,6 +16,8 @@ jobs:
         docker pull archlinux:base
         docker run -d -i -t --privileged -v `pwd`:/root/repo --name build archlinux:base
         docker exec -t build cat /etc/pacman.conf
+        docker exec -t build sed 's/^\#VerbosePkgLists/ParallelDownloads = 5/' -i /etc/pacman.conf
+        docker exec -t build cat /etc/pacman.conf
         docker exec -t build pacman -Syy --noconfirm
         docker exec -t build pacman -Su --noconfirm
         docker exec -t build cat /etc/pacman.conf
